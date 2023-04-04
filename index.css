@@ -1,0 +1,94 @@
+.game-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+
+}
+
+.road {
+    writing-mode: vertical-rl;
+    /* vertical right-to-left */
+    text-orientation: upright;
+    /* keep letters upright */
+    /* transform: rotate(160deg); */
+    /* rotate to correct orientation */
+    white-space: nowrap;
+    /* prevent line breaks */
+    position: absolute;
+    width: 100px;
+    height: 700px;
+    background-color: #3b3a3a;
+}
+
+.road1 {
+    left: 0;
+}
+
+.road2 {
+    left: 100px;
+}
+
+.road3 {
+    left: 200px;
+}
+
+.road4 {
+    left: 300px;
+}
+
+.road5 {
+    left: 400px;
+}
+
+.car {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    
+}
+.car > img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: -25px;
+}
+.car1 {
+    left: 425px;
+}
+
+.car2 {
+    left: 25px;
+}
+.car2 > img{
+    width: 50px;
+    left: 0px;
+}
+.obstacle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #023eb6;
+    top: -50px;
+}
+
+.score {
+    position: absolute;
+    top: 20px;
+    right: -100px;
+    color: black;
+    font-size: 20px;
+}
+
+div img{
+    height: 25px;
+    width: 30px;
+}
+
+p{
+    padding: 20px 20px 0 0;
+    color: white;
+    width: 30px;
+}
