@@ -112,6 +112,7 @@ $(document).ready(function () {
   });
   $("#BackButton").click(function(){
     $(".OptionsMenu").hide()
+    $("body").css("background-image","url(images/testbg.jpg)")
     $(".Menu").show();
   })
 
