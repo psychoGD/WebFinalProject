@@ -61,19 +61,29 @@ $(document).ready(function () {
   var BarriersId = 0;
   let intervalsId = [];
   let racingSound;
+
+  // let MenuMusic = new Audio("Musics/MenuMusic/synthwave-outrun-139501.mp3")
+  // MenuMusic.play();
   // -------------------------------------------------------------
+  onclick = (event) => {
+    MenuMusic.play();
+  };
 
   $(".game-container").hide();
+  // $(".OptionsMenu").hide();
   $(".GameOverMenu").hide();
+  $(".Menu").hide();
 
+  Options();
   // [Click Events] ---------------------------------------------------
   $(".MenuButtons").click(function () {
     let clicksound = new Audio("sounds/btnClick.wav");
+
     clicksound.play();
   });
   $("#StartButton").click(function () {
     $(".Menu").hide();
-    
+
     StartFunction();
   });
   $("#MenuButton").click(function () {
@@ -81,9 +91,14 @@ $(document).ready(function () {
     $(".Menu").show();
   });
 
-  $("#RestartButton").click(function(){
+  $("#RestartButton").click(function () {
     $(".GameOverMenu").hide();
     StartFunction();
+  });
+
+  $("#OptionsButton").click(function () {
+    $(".Menu").hide();
+    Options();
   });
   // -------------------------------------------------------------
 
@@ -106,7 +121,10 @@ $(document).ready(function () {
     }
   });
   // -------------------------------------------------------------
-
+  function Options() {
+    $(".OptionsMenu").show();
+    $("body").css("background-image", "url(images/optionsbg.jpg)");
+  }
   function arrayRemove(arr, value) {
     return arr.filter(function (ele) {
       return ele != value;
@@ -131,9 +149,13 @@ $(document).ready(function () {
    * @returns {Boolean} return true if collision have else return false
    */
   function CheckCollision(car, barrier, barrierTop) {
-    // Bura Static Deyerler Ile Isledim 500px Ve 600px kimi bu her defesinde gedib tapmaqdan yaxsidi oyunda cunku 
+    // Bura Static Deyerler Ile Isledim 500px Ve 600px kimi bu her defesinde gedib tapmaqdan yaxsidi oyunda cunku
     // masinin top hissesi hemise 500 px de olur ve alt hissesi 600 px de olur cunku 100 px sekilin uzunlugudu
-    if ((car.currentLine == barrier.currentLine) && (barrierTop >= 500 && barrierTop <= 600)) {
+    if (
+      car.currentLine == barrier.currentLine &&
+      barrierTop >= 500 &&
+      barrierTop <= 600
+    ) {
       return true;
     }
     return false;
@@ -155,9 +177,9 @@ $(document).ready(function () {
   //direction -1 - Left
   //direction 1 - Right
   function CarCollision(car, otherCar, direction) {
-    let WayToGo = car.currentLine+direction
-    if(WayToGo==otherCar.currentLine){
-      moveCarClass(otherCar,direction);
+    let WayToGo = car.currentLine + direction;
+    if (WayToGo == otherCar.currentLine) {
+      moveCarClass(otherCar, direction);
     }
   }
   /**
@@ -169,10 +191,12 @@ $(document).ready(function () {
    */
   //direction -1 - Left
   //direction 1 - Right
-  function CheckCarCollision(car, otherCar, direction){
-    let WayToGo = car.currentLine+direction
-    let result = (WayToGo==otherCar.currentLine) && (otherCar.currentLine==1 || otherCar.currentLine==5)
-      return result 
+  function CheckCarCollision(car, otherCar, direction) {
+    let WayToGo = car.currentLine + direction;
+    let result =
+      WayToGo == otherCar.currentLine &&
+      (otherCar.currentLine == 1 || otherCar.currentLine == 5);
+    return result;
   }
   function Road() {
     SpawnBarrierAlgorithm();
@@ -297,18 +321,16 @@ $(document).ready(function () {
     //direction 1 - Right
     var newPosition = car.position + direction * 100;
     let result;
-    if(car.id==1){
-      result = CheckCarCollision(car_1,car_2,direction)
-    }
-    else{
-      result = CheckCarCollision(car_2,car_1,direction)
+    if (car.id == 1) {
+      result = CheckCarCollision(car_1, car_2, direction);
+    } else {
+      result = CheckCarCollision(car_2, car_1, direction);
     }
     if (newPosition >= -20 && newPosition <= 475 && !result) {
-      if(car.id==1){
-        CarCollision(car_1,car_2,direction);
-      }
-      else{
-        CarCollision(car_2,car_1,direction)
+      if (car.id == 1) {
+        CarCollision(car_1, car_2, direction);
+      } else {
+        CarCollision(car_2, car_1, direction);
       }
       car.position = newPosition;
       //original

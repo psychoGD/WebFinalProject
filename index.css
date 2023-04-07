@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Press+Start+2P&family=Sen&family=Source+Sans+Pro:wght@700&display=swap');
-#line{
+
+#line {
     width: 10px;
     height: 10px;
     background-color: red;
     display: inline-block;
 }
-body{
+
+body {
     background-image: url("images/testbg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-size: cover;
 }
+
 .Menu {
     width: 30%;
     height: 30em;
@@ -44,17 +47,19 @@ body{
     font-size: 25px;
     /* rgb(0, 174, 255); */
     background: #2c2a3d;
-    
+
     border-color: rgb(215, 141, 180);
-    font-family: 'Press Start 2P',sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
     padding: 10px;
     box-shadow: 1px 3px 15px deeppink;
 }
-.MenuButtons:hover{
+
+.MenuButtons:hover {
     /* rgba(0,255,255, 0.8); */
     background-color: rgba(73, 114, 123, 0.895);
     text-shadow: 0 0 10px deeppink;
 }
+
 .game-container {
     position: relative;
     width: 600px;
@@ -95,7 +100,7 @@ body{
 
 .road5 {
     left: 400px;
-    
+
 }
 
 .car {
@@ -117,6 +122,7 @@ body{
 .car1 {
     left: 25px;
 }
+
 
 .car2 {
     left: 425px;
@@ -164,18 +170,20 @@ p {
     border: 1px solid rebeccapurple;
 }
 
-.counter{
+.counter {
     position: absolute;
     left: 1em;
     top: 40%;
     font-size: 100px;
     color: red;
 }
-.barrier{
+
+.barrier {
     position: absolute;
     left: 40px;
 }
-.GameOverMenu{
+
+.GameOverMenu {
     width: 30%;
     height: 30em;
     /* background-color: rgb(255, 255, 255); */
@@ -184,9 +192,10 @@ p {
     text-align: center;
     margin-top: 20em;
 }
-.Text{
+
+.Text {
     font-size: 60px;
-    
+
     color: white;
     text-shadow: 0 0 10px #ffebeb,
         0 0 20px #fff,
@@ -196,4 +205,89 @@ p {
         0 0 80px #ff00de,
         0 0 80px #ff00de,
         0 0 80px #ff00de;
+}
+
+.OptionsMenu {
+    width: 30%;
+    height: 50em;
+    margin-top: 5%;
+
+}
+
+.Options {
+    margin-top: 50px;
+    border: 1px solid #f7aee2;
+    box-shadow: 0 0 5px #349BF8, 0 0 10px #F12564, 0 0 20px #3D3B9C, 0 0 40px #FCABE3;
+    display: flex;
+
+    align-items: center;
+}
+
+.OptionsText {
+    font-size: 25px;
+    color: #FDFFFE;
+    text-shadow: 0 0 5px #F12564, 0 0 10px #F12564, 0 0 20px #F12564, 0 0 40px #F12564;
+    border: 1px solid #F12564;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+
+.neon-slider {
+
+    -webkit-appearance: none;
+
+    width: 60%;
+    height: 10px;
+    background-color: #ffffff;
+    outline: none;
+    transition: opacity 0.2s;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+/* Style the range slider thumb */
+.neon-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #F12564;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 5px #F12564, 0 0 10px #F12564, 0 0 20px #F12564, 0 0 40px #F12564;
+    /* Multiple shadows for neon glow effect */
+}
+
+/* Style the range slider thumb on hover */
+.neon-slider::-webkit-slider-thumb:hover {
+    opacity: 1;
+}
+
+.neon-slider:disabled {
+    background-color: rgb(192, 192, 192);
+
+}
+
+.neon-slider:disabled::-webkit-slider-thumb{
+    width: 0px;
+}
+
+.Options>button{
+    margin-left: 50%;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 0 0 5px #F12564, 0 0 10px #F12564, 0 0 20px #F12564, 0 0 40px #F12564;
+
+    border: 1px solid #F12564;
+}
+
+.Options>button:hover{
+    background-color: #F12564;
+
 }
