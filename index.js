@@ -61,7 +61,8 @@ $(document).ready(function () {
   var BarriersId = 0;
   let intervalsId = [];
   let racingSound;
-
+  let soundFlag = true
+  let sfxFlag = true
   // let MenuMusic = new Audio("Musics/MenuMusic/synthwave-outrun-139501.mp3")
   // MenuMusic.play();
   // -------------------------------------------------------------
@@ -70,16 +71,19 @@ $(document).ready(function () {
   };
 
   $(".game-container").hide();
-  // $(".OptionsMenu").hide();
+  $(".OptionsMenu").hide();
   $(".GameOverMenu").hide();
-  $(".Menu").hide();
+  // $(".Menu").hide();
 
-  Options();
+  // Options();
   // [Click Events] ---------------------------------------------------
   $(".MenuButtons").click(function () {
-    let clicksound = new Audio("sounds/btnClick.wav");
+    if(sfxFlag==true){
 
-    clicksound.play();
+      let clicksound = new Audio("sounds/btnClick.wav");
+      
+      clicksound.play();
+    }
   });
   $("#StartButton").click(function () {
     $(".Menu").hide();
@@ -95,11 +99,47 @@ $(document).ready(function () {
     $(".GameOverMenu").hide();
     StartFunction();
   });
+  $(".OptionsButtons").click(function(){
+    if(sfxFlag==true){
 
+      let audio = new Audio("sounds/optionsClick.mp3")
+      audio.play()
+    }
+  })
   $("#OptionsButton").click(function () {
     $(".Menu").hide();
     Options();
   });
+  $("#BackButton").click(function(){
+    $(".OptionsMenu").hide()
+    $(".Menu").show();
+  })
+
+  let sfxButton = $("#SFXButton");
+  $("#SFXButton").click(function(){
+    
+    let text = sfxButton.text()
+    if(text=="ON"){
+      sfxButton.text("OFF") 
+      sfxFlag = false
+    }
+    else{
+      sfxButton.text("ON")
+      sfxFlag = true
+    }
+  })
+  let soundButton = $("#SoundButton")
+  $("#SoundButton").click(function(){
+    let text = soundButton.text()
+    if(text=="ON"){
+      soundButton.text("OFF") 
+      soundFlag = false
+    }
+    else{
+      soundButton.text("ON")
+      soundFlag = true
+    }
+  })
   // -------------------------------------------------------------
 
   // [Controls] ---------------------------------------------------
@@ -297,17 +337,25 @@ $(document).ready(function () {
     setTimeout(function () {
       car_1 = new Car(".car1", 100, 1, 25);
       car_2 = new Car(".car2", 100, 5, 425);
-      racingSound = new Audio("sounds/racing.mp3");
-      racingSound.volume = 0.2;
-      racingSound.play();
+
+      if(soundFlag==true){
+        racingSound = new Audio("sounds/racing.mp3");
+        racingSound.volume = 0.2;
+        racingSound.play();
+      }
+
       Road();
     }, 4000);
 
     setTimeout(function () {
       ShowSeconds();
-      let startSound = new Audio("sounds/startSound.mp3");
-      startSound.volume = 0.1;
-      startSound.play();
+
+      if(soundFlag==true){
+        let startSound = new Audio("sounds/startSound.mp3");
+        startSound.volume = 0.1;
+        startSound.play();
+      }
+
     }, 1000);
   }
 
@@ -349,9 +397,12 @@ $(document).ready(function () {
       car.carClass.removeClass(flashAnimation);
     }, 500);
     ChangeHealtUI(car);
-    let audio = new Audio("sounds/crash.mp3");
-    audio.volume = 0.4;
-    audio.play();
+    if(sfxFlag==true){
+
+      let audio = new Audio("sounds/crash.mp3");
+      audio.volume = 0.4;
+      audio.play();
+    }
   }
   /**
    * This Function Change Health UI Color,Text And Decrease Car Health
@@ -398,12 +449,18 @@ $(document).ready(function () {
    * @param car Who Lost The Game
    */
   function GameOver(car) {
-    racingSound.pause();
-    racingSound = null;
+    if(soundFlag==true){
+
+      racingSound.pause();
+      racingSound = null;
+    }
     $("body").css("background-image", 'url("images/testbg.jpg")');
     $(".game-container").hide();
-    let sound = new Audio("sounds/gameover_BEST.mp3");
-    sound.play();
+    if(soundFlag==true){
+
+      let sound = new Audio("sounds/gameover_BEST.mp3");
+      sound.play();
+    }
     intervalsId.forEach((id) => {
       clearInterval(id);
       intervalsId = arrayRemove(intervalsId, id);
