@@ -417,7 +417,7 @@ $(document).ready(function () {
       healthUI.css("color", "green");
     } else if (car.health <= 70 && car.health > 40) {
       healthUI.css("color", "rgb(255, 157, 0)");
-    } else if (car.health >= 0) {
+    } else if (car.health <= 0) {
       GameOver(car);
     } else {
       healthUI.css("color", "red");
