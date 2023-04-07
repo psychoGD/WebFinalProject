@@ -7,25 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cookie&family=Press+Start+2P&family=Sen&family=Source+Sans+Pro:wght@700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    
+    <!-- <div id="line"></div> -->
+    <section class="Menu">
+        <button class="MenuButtons" id="StartButton">Start</button>
+        <button class="MenuButtons">Options</button>
+        <button class="MenuButtons">Credits</button>
+    </section>
+
     <div class="game-container">
-        <div class="road road1"><p>| | | | | | | | | | <img class="barrier" src="images/barrier1.png" alt=""> | | | | | | | | |</p></div>
-        <div class="road road2"><p>| | | | | | | | | | | | | | | | | | | | </p></div>
-        <div class="road road3"><p>| | | | | | | | | | | | | | | | | | | | </p></div>
-        <div class="road road4"><p>| | | | | | | | | | | | | | | | | | | | </p></div>
-        <div class="road road5"><p>| | | | | | | | | | | | | | | | | | | | </p></div>
+        <div class="road road1">
+            <p class="roadLines">| | | | | | | | | | | | | | | | | | | | </p>
+        </div>
+        <div class="road road2">
+            <p class="roadLines">| | | | | | | | | | | | | | | | | | | | </p>
+        </div>
+        <div class="road road3">
+            <p class="roadLines">| | | | | | | | | | | | | | | | | | | | </p>
+        </div>
+        <div class="road road4">
+            <p class="roadLines">| | | | | | | | | | | | | | | | | | | | </p>
+        </div>
+        <div class="road road5">
+            <p class="roadLines">| | | | | | | | | | | | | | | | | | | | </p>
+        </div>
         <div class="car car1"><img src="images/car3.png" alt=""></div>
         <div class="car car2"><img src="images/car2.png" alt=""></div>
-        
         <div class="score">
             <h3>Player 1 Lives: <span class="player1-lives">100</span></h3>
             <h3>Player 2 Lives: <span class="player2-lives">100</span></h3>
         </div>
     </div>
-    
+    <section class="GameOverMenu">
+        <h1 class="Text">Game Over</h1>
+        <button class="MenuButtons" id="RestartButton">Restart</button>
+        <button class="MenuButtons" id="MenuButton">Menu</button>
+    </section>
     <link rel="stylesheet" href="index.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>

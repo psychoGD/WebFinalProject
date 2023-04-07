@@ -1,9 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Press+Start+2P&family=Sen&family=Source+Sans+Pro:wght@700&display=swap');
+#line{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    display: inline-block;
+}
+body{
+    background-image: url("images/testbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+}
+.Menu {
+    width: 30%;
+    height: 30em;
+    /* background-color: rgb(255, 255, 255); */
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 20em;
+}
+
+.MenuButtons {
+    /* conic-gradient(at -10% 50%, deeppink, cyan) */
+    width: 70%;
+    margin: 30px;
+
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    text-shadow: 0 0 10px #ffebeb,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #ff00de,
+        0 0 70px #ff00de,
+        0 0 80px #ff00de,
+        0 0 80px #ff00de,
+        0 0 80px #ff00de;
+
+    font-size: 25px;
+    /* rgb(0, 174, 255); */
+    background: #2c2a3d;
+    
+    border-color: rgb(215, 141, 180);
+    font-family: 'Press Start 2P',sans-serif;
+    padding: 10px;
+    box-shadow: 1px 3px 15px deeppink;
+}
+.MenuButtons:hover{
+    /* rgba(0,255,255, 0.8); */
+    background-color: rgba(73, 114, 123, 0.895);
+    text-shadow: 0 0 10px deeppink;
+}
 .game-container {
     position: relative;
     width: 600px;
     height: 600px;
     margin: 0 auto;
-
 }
 
 .road {
@@ -39,6 +95,7 @@
 
 .road5 {
     left: 400px;
+    
 }
 
 .car {
@@ -47,25 +104,29 @@
     height: 100px;
     bottom: 0;
     left: 0;
-    
+
 }
-.car > img{
+
+.car>img {
     width: 100px;
     height: 100px;
     position: absolute;
     left: -25px;
 }
+
 .car1 {
-    left: 425px;
+    left: 25px;
 }
 
 .car2 {
-    left: 25px;
+    left: 425px;
 }
-.car2 > img{
+
+.car2>img {
     width: 50px;
     left: 0px;
 }
+
 .obstacle {
     position: absolute;
     width: 50px;
@@ -82,13 +143,57 @@
     font-size: 20px;
 }
 
-div img{
+div img {
     height: 25px;
     width: 30px;
 }
 
-p{
+p {
     padding: 20px 20px 0 0;
     color: white;
     width: 30px;
+}
+
+.border {
+
+    position: absolute;
+    height: 50px;
+    width: 2px;
+    ;
+    background-color: red;
+    border: 1px solid rebeccapurple;
+}
+
+.counter{
+    position: absolute;
+    left: 1em;
+    top: 40%;
+    font-size: 100px;
+    color: red;
+}
+.barrier{
+    position: absolute;
+    left: 40px;
+}
+.GameOverMenu{
+    width: 30%;
+    height: 30em;
+    /* background-color: rgb(255, 255, 255); */
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 20em;
+}
+.Text{
+    font-size: 60px;
+    
+    color: white;
+    text-shadow: 0 0 10px #ffebeb,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #ff00de,
+        0 0 70px #ff00de,
+        0 0 80px #ff00de,
+        0 0 80px #ff00de,
+        0 0 80px #ff00de;
 }
