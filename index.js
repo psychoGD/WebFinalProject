@@ -410,7 +410,7 @@ $(document).ready(function () {
    * @param  car Car class
    */
   function ChangeHealtUI(car) {
-    car._takeDamage(50);
+    car._takeDamage(10);
     let healthUI = $(`.player${car.id}-lives`);
     healthUI.text(car.health);
     if (car.health > 70) {
